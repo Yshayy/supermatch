@@ -1,11 +1,18 @@
-function buildPattern(pattern){
-  return (v)=>{
-    if (typeof(pattern) ==='string'){
-      return v === pattern
+function buildPattern([pattern, action]){
+  return (v, next)=>{
+    if (typeof(pattern) ==='string' && v === pattern){
+      return action(v)
     }
     if (pattern instanceof RegExp){
-      return v.match(pattern)
+      const regexMatch =v.match(pattern)
+      if (regexMatch) return action(regexMatch)
     }
+    if (pattern instanceof Object){
+      if (Object.keys(pattern).every(k=> pattern[k] === v[k])){
+        return action()
+      }
+    }
+    next(v)
   }
 }
 
@@ -14,15 +21,10 @@ function pairs(arr){
 }
 
 function createMatcher(exp){
-  const patternFunctions = pairs(exp).map(([pattern, action])=>([buildPattern(pattern), action]))
-  return (value)=>{
-    for (let [fn, action] of patternFunctions){
-      let result = fn(value)
-      if (result) return action(result)
-    }
-  }
+  const patternFunctions = pairs(exp).map(buildPattern)
+  return patternFunctions.reduceRight((acc,next)=> (value)=>next(value,acc), ()=>{throw 'no match'})
 }
 
-export default function match(match, exp){
+export default function match(match, ...exp){
   return createMatcher(exp)(match)
 }
