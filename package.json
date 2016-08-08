@@ -1,6 +1,6 @@
 {
   "name": "supermatch",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Idiomatic pattern matching in es6+",
   "main": "index.js",
   "scripts": {

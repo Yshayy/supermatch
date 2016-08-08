@@ -5,6 +5,7 @@ function buildPattern([pattern, action]){
     }
     if (pattern instanceof RegExp){
       const regexMatch =v.match(pattern)
+      console.log(regexMatch);
       if (regexMatch) return action(regexMatch)
     }
     if (pattern instanceof Object){

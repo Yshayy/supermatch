@@ -17,9 +17,9 @@ describe('match specs', function(){
       expect(result).to.be.eql(true)
     })
     it('should capture regex value', ()=>{
-      const result = match('abc', [
+      const result = match('abc', 
         /ab/, (m)=> m
-      ])
+      )
       expect(result[0]).to.be.eql('ab')
     })
   })
