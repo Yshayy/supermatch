@@ -1,5 +1,4 @@
 import buildPattern from './patterns/build_pattern'
-import {wildcard} from './capture'
 class Case{
   constructor(pattern, action){
     this.pattern = pattern
