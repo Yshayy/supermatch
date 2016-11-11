@@ -9,6 +9,8 @@ export function variable(s){
   return {[variableSymbol]:s} 
 }
 
+export const wildcard = variable('_')
+
 let proxyApi = {}
 if (global.Proxy){
   proxyApi = new Proxy({}, proxy)
