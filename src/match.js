@@ -19,13 +19,13 @@ function pairs(arr){
   return arr.reduce((acc, next, i)=> i%2 ==0 ? [...acc, [next]] : [...acc.slice(1), [...acc[acc.length-1], next]], [])
 }
 
-const EmptyCase = {eval(){throw 'no match'}}
+const NoMatch = ()=>{throw 'no match'}
 
 function createMatcher(exp){
   const cases = pairs(exp).map(createCase)
   return cases.reduceRight((acc,next)=> (value)=>
     next.eval(value,acc)
-  , EmptyCase.eval.bind(EmptyCase))
+  , NoMatch)
 }
 
 export default function match(match, ...exp){
