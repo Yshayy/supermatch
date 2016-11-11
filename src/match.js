@@ -19,7 +19,7 @@ function pairs(arr){
   return arr.reduce((acc, next, i)=> i%2 ==0 ? [...acc, [next]] : [...acc.slice(1), [...acc[acc.length-1], next]], [])
 }
 
-const EmptyCase = createCase([wildcard, ()=>{throw 'no match'}])
+const EmptyCase = {eval(){throw 'no match'}}
 
 function createMatcher(exp){
   const cases = pairs(exp).map(createCase)
