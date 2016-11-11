@@ -1,4 +1,4 @@
-export default class ExactStringPattern {
+export default class ExactPattern {
   constructor(pattern){
     this.pattern = pattern
   }

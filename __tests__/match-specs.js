@@ -2,8 +2,16 @@
 import {match, capture as $} from '../src/api'
 
 describe('match specs', function(){
+  describe('matching a number', ()=>{
+    it('should support matching exact number', ()=>{
+      const result = match(10, 
+        10, ()=> true
+      )
+      expect(result).toBe(true)
+    })
+  })
   describe('matching a string', ()=>{
-    it('should support fixed strings', ()=>{
+    it('should support exact strings', ()=>{
       const result = match('abc', 
         'abc', ()=> true
       )
@@ -45,8 +53,8 @@ describe('match specs', function(){
       expect(result).toBe(true)
     })
     it('should match complex object structure', ()=>{
-      const result = match({a: {c:'b'}}, 
-        {a: {c:'b'}}, ()=> true
+      const result = match({a: {c:10}}, 
+        {a: {c:10}}, ()=> true
       )
       expect(result).toBe(true)
     })
@@ -57,14 +65,14 @@ describe('match specs', function(){
       expect(result).toBe(true)
     })
     it('should able to capture multiple variable', ()=>{
-      const result = match({x: 'a', y: 'b', z:{zz:'c'}}, 
+      const result = match({x: 'a', y: 'b', z:{zz:3}}, 
         {
           x: $.x, 
           y: $.y, 
           z: {
             zz: $.zz
           }
-        }, ({x, y, zz})=> x === 'a' && y === 'b' && zz === 'c'
+        }, ({x, y, zz})=> x === 'a' && y === 'b' && zz === 3
       )
       expect(result).toBe(true)
     })
