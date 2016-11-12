@@ -9,8 +9,7 @@ fit quite naturally in most code. Unfortunally, the same cannot be said to if/sw
 While the language still got the ?: operator, it's not powerfull enough for many cases
 and it can be quite diffcult to understand when being abused.
 
-supermatch attempt to solve this problem by taking inspirations from pattern matching capabilites of other programming languages
-(mainly ocaml/f#).
+supermatch attempt to solve this problem by providing pattern-matching capabilites inspired from other programming languages (mainly OCaml).  
 Supermatch is implemented in a library-level and not language-level
 
 -Some examples
