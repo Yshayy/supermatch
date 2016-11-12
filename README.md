@@ -20,6 +20,7 @@ Supermatch is implemented in a library-level and not language-level
 - Easier to read
 - Quite flexible
 - Simple integration
+- Idiomatic syntax
 
 # Other considerations
 In supermatch, we performane for expressiveness and convinence,
