@@ -21,7 +21,7 @@ Supermatch is implemented in a library-level and not language-level
 - Quite flexible
 - Simple integration
 
-# Other cosiderations
+# Other considerations
 In supermatch, we performane for expressiveness and convinence,
 since supermatch is implemented in a library-level.
 (at least until javascript will get these capabilites natively, or we switch to macro-based approach)
