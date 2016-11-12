@@ -16,10 +16,10 @@ Supermatch is implemented in a library-level and not language-level
 -Some examples
 
 # Main benifets
-Switch-cases as experession
-Easier to read
-Quite flexible
-Simple integration
+- Switch-cases as experession
+- Easier to read
+- Quite flexible
+- Simple integration
 
 In supermatch, we performane for expressiveness and convinence,
 since supermatch is implemented in a library-level.
