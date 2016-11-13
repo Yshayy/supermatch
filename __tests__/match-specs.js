@@ -30,21 +30,6 @@ describe('match specs', function(){
       expect(result[0]).toBe('ab')
     })
   })
-  describe('flow', function(){
-    it('should fall between cases', ()=>{
-      const result = match('abc', 
-        'def', ()=> 0,
-        /ab/, ()=> 1,
-        'abc', ()=> 2
-      )
-      expect(result).toBe(1)
-    })
-    it('should throw when there is no match', ()=>{
-      expect(()=>match('abc', 
-        'def', ()=> 0
-      )).toThrow('no match')
-    })
-  })
   describe('matching an object', ()=>{
     it('should match object structure', ()=>{
       const result = match({a: 'b'}, 
@@ -77,4 +62,20 @@ describe('match specs', function(){
       expect(result).toBe(true)
     })
   })
+  describe('flow', function(){
+    it('should fall between cases', ()=>{
+      const result = match('abc', 
+        'def', ()=> 0,
+        /ab/, ()=> 1,
+        'abc', ()=> 2
+      )
+      expect(result).toBe(1)
+    })
+    it('should throw when there is no match', ()=>{
+      expect(()=>match('abc', 
+        'def', ()=> 0
+      )).toThrow('no match')
+    })
+  })
+
 })
