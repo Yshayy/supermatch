@@ -25,7 +25,7 @@ describe('match specs', function(){
     })
     it('should capture regex value', ()=>{
       const result = match('abc', 
-        /ab/, (m)=> m
+        /ab/, (_, m)=> m
       )
       expect(result[0]).toBe('ab')
     })
@@ -45,7 +45,7 @@ describe('match specs', function(){
     })
     it('should able to capture variable', ()=>{
       const result = match({a: 'b'}, 
-        {a: $.x}, ({x})=> x === 'b'
+        {a: $.x}, (_, {x})=> x === 'b'
       )
       expect(result).toBe(true)
     })
@@ -57,7 +57,7 @@ describe('match specs', function(){
           z: {
             zz: $.zz
           }
-        }, ({x, y, zz})=> x === 'a' && y === 'b' && zz === 3
+        }, (_, {x, y, zz})=> x === 'a' && y === 'b' && zz === 3
       )
       expect(result).toBe(true)
     })

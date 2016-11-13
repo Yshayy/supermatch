@@ -6,7 +6,7 @@ class Case{
   }
   eval(value, next){
     let match = this.pattern.match(value)
-    return match && this.action(match) || next(value)    
+    return match && this.action(value, match) || next(value)    
   }
 }
 
