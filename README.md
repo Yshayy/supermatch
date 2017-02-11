@@ -10,7 +10,7 @@ While the language still got the ?: operator, it's not powerfull enough for many
 and it can be quite diffcult to understand when being abused.
 
 supermatch attempt to solve this problem by providing pattern-matching capabilites inspired from other programming languages (mainly OCaml).  
-Supermatch is implemented in a library-level and not language-level
+Supermatch is implemented as a runtime library and not as language extension 
 
 -Some examples
 
