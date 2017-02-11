@@ -22,6 +22,6 @@ Supermatch is implemented in a library-level and not language-level
 - Idiomatic syntax
 
 # Other considerations
-In supermatch, we performane for expressiveness and convinence,
+In supermatch, we're trading performance for expressiveness and convinence,
 since supermatch is implemented in a library-level.
 (at least until javascript will get these capabilites natively, or we switch to macro-based approach)
