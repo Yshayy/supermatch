@@ -22,6 +22,5 @@ Supermatch is implemented as a runtime library and not as language extension
 - Idiomatic syntax
 
 # Other considerations
-In supermatch, we're trading performance for expressiveness and convinence,
-since supermatch is implemented in a library-level.
+Supermatch is implemented in a library-level, therfor we're sort of trading performance for expressiveness and convinence.
 (at least until javascript will get these capabilites natively, or we switch to macro-based approach)
